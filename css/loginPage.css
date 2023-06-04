@@ -1,0 +1,153 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  width: 1600px;
+  height: 1200px;
+  display: flex;
+  margin: 0 auto;
+}
+.login-page {
+  width: 800px;
+  height: 100%;
+}
+.img {
+  width: 800px;
+  height: 100%;
+  background-color: red;
+}
+.logo-nav {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  align-items: center;
+  padding: 0 30px 30px 30px;
+}
+.logo {
+  margin-right: 10px;
+}
+.login-box {
+  width: 100%;
+  height: 1070px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login {
+  margin: 0 auto;
+  width: 350px;
+  height: 500px;
+  background-color: #fff;
+}
+.login h1 {
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 0;
+}
+.login p {
+  font-size: 13px;
+  color: darkslategray;
+  margin-top: 0;
+}
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  padding: 25px;
+  color: darkslategray;
+  opacity: 0.5;
+}
+.or hr {
+  width: 100px;
+}
+.google {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: #d9d9d9 1px solid;
+}
+.google p {
+  padding-left: 5px;
+  font-size: 10px;
+  color: #000;
+  margin: 0;
+}
+.google a {
+  text-decoration: none;
+  color: black;
+}
+.email-form p{
+    font-weight: bold;
+    opacity: 0.7;
+}
+.password-form p{
+    font-weight: bold;
+    opacity: 0.7;
+}
+.email-form input {
+padding-left: 5px;
+  width: 345px;
+  height: 30px;
+  border-radius: 5px;
+  border: #d9d9d9 1px solid;
+  margin-bottom: 10px;
+}
+.password-form input {
+  width: 345px;
+  height: 30px;
+  border-radius: 5px;
+  border: #d9d9d9 1px solid;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+#password {
+}
+.rem-pass {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.rem {
+  display: flex;
+  width: 130px;
+  height: 20px;
+}
+.forgot {
+  display: flex;
+  width: 130px;
+  height: 20px;
+}
+.forgot p a {
+  color: dodgerblue;
+  text-decoration: none;
+}
+.sign-in {
+    
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: dodgerblue;
+  border: 1px solid gray;
+  color: #fff;
+}
+.sign-in:hover {
+  cursor: pointer;
+  background-color: #509ce9;
+}
+.create-acc {
+  margin-top: 25px;
+}
+.create-acc a {
+  color: dodgerblue;
+  text-decoration: none;
+}
