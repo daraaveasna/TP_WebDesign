@@ -1,0 +1,19 @@
+
+@media only screen  {  
+    .wrapper{
+        background-color: yellow;
+        width: 1000px;
+       
+        height: 100vh;  /* 100vh = 100% of viewport height*/
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*use clamp */
+    .content{
+        background-color: rgb(65, 208, 63);
+        width: clamp(300px, 10%, 800px);
+        height: 200px;  /* 100vh = 100% of viewport height*/
+    }    
+}

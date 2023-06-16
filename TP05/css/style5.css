@@ -1,0 +1,21 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    grid-gap: 5px;
+    width: 50%;
+    background-color: gray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.box{
+    background-color: aqua;
+    border-radius: 5px;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    display: grid;
+    place-items: center;
+}
