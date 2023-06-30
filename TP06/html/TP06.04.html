@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Exercise 04</title>
+  </head>
+  <body class="bg-gray-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-md shadow-md">
+      <h1 class="text-3xl font-bold flex justify-center">Counter</h1>
+    </button>
+    <span id="numberDisplay" class="text-9xl font-bold text-gray-800 py-4 flex justify-center font-mono my-16 "
+      >0</span
+    >
+      <div class="flex items-center space-x-4">
+      
+        <button
+          id="decreaseBtn"
+          class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          Decrease
+        
+        <button id="resetBtn" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-600">
+          Reset
+        </button>
+        <button
+          id="increaseBtn"
+          class="px-4 py-2 bg-green-500 text-white rounded hover:"
+        >
+          Increase
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Define the NumberCounter class
+      class NumberCounter {
+        constructor() {
+          this.number = 0;
+          this.displayElement = document.getElementById("numberDisplay");
+          this.decreaseButton = document.getElementById("decreaseBtn");
+          this.resetButton = document.getElementById("resetBtn");
+          this.increaseButton = document.getElementById("increaseBtn");
+
+          // Bind event handlers to the buttons
+          this.decreaseButton.addEventListener(
+            "click",
+            this.decrease.bind(this)
+          );
+          this.resetButton.addEventListener("click", this.reset.bind(this));
+          this.increaseButton.addEventListener(
+            "click",
+            this.increase.bind(this)
+          );
+        }
+
+        decrease() {
+          this.number--;
+          this.updateDisplay();
+          this.displayElement.style.color = "red";
+        }
+
+        reset() {
+          this.number = 0;
+          this.updateDisplay();
+          this.displayElement.style.color = "black";
+        }
+
+        increase() {
+          this.number++;
+          this.updateDisplay();
+          this.displayElement.style.color = "green";
+        }
+
+        updateDisplay() {
+          this.displayElement.textContent = this.number;
+        }
+      }
+
+      // Create an instance of the NumberCounter class
+      const numberCounter = new NumberCounter();
+    </script>
+  </body>
+</html>

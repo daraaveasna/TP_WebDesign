@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="h-screen bg-white flex flex-row justify-center items-center">
+      <div
+        class="bg-gray-500 border-4 border-black h-[800px] w-[800px] flex flex-row justify-center items-center"
+      >
+        <div class="bg-blue-800 h-[750px] w-[700px]">
+          <div
+            class="bg-white h-[50px] text-blue-400 flex flex-row justify-start items-center"
+          >
+            <h1 class="text-center text-4 font-bold ml-8">
+              Random Color Generator
+            </h1>
+          </div>
+
+          <div
+            class="flex flex-col justify-center items-center border-4 w-full"
+          >
+            <div id="color-display" class="w-full h-[400px] text-center">
+              <div
+                class="text-white font-bold text-2xl bg-black m-1 mt-3 h-[100px]"
+              >
+                Background Color:
+                <div id="number-Display" class="text-blue-600"></div>
+              </div>
+
+              <button
+                id="generate-button"
+                class="border-2 bg-black border-black rounded-lg p-4 mt-56 text-white hover:bg-slate-600"
+              >
+                Generate Color
+              </button>
+              <button
+                id="reset-button"
+                class="border-2 border-black rounded-lg p-4 hover:bg-slate-600"
+              >
+                Reset
+              </button>
+
+              <div id="recorded-colors" class="bg-white mt-10"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    class Color {
+      colorType = [
+        "#2336FB",
+        "#497068",
+        "#599F96",
+        "#1544C7",
+        "#3542AF",
+        "#15FCA9",
+        "#10EF55",
+        "#722031",
+      ];
+      records = [];
+
+      constructor() {
+        // Empty constructor
+      }
+
+      generate() {
+        const randomIndex = this.getRandomNumber();
+        const color = this.colorType[randomIndex];
+        this.records.push(color);
+        return color;
+      }
+
+      getRandomNumber() {
+        return Math.floor(Math.random() * this.colorType.length);
+      }
+
+      getRecords() {
+        return this.records;
+      }
+
+      reset() {
+        this.records = [];
+      }
+    }
+
+    // Create an instance of Color
+    const color = new Color();
+
+    // Get DOM elements
+    const numberDisplay = document.getElementById("number-Display");
+    const colorDisplay = document.getElementById("color-display");
+    const generateButton = document.getElementById("generate-button");
+    const resetButton = document.getElementById("reset-button");
+    const recordedColorsContainer = document.getElementById("recorded-colors");
+
+    // Event listener for generate button
+    generateButton.addEventListener("click", () => {
+      const randomColor = color.generate();
+      colorDisplay.style.backgroundColor = randomColor;
+      numberDisplay.textContent = randomColor;
+      displayRecordedColors();
+    });
+
+    // Event listener for reset button
+    resetButton.addEventListener("click", () => {
+      color.reset();
+      colorDisplay.style.backgroundColor = "";
+      numberDisplay.textContent = "";
+      displayRecordedColors();
+    });
+
+    function displayRecordedColors() {
+      recordedColorsContainer.innerHTML = "";
+      const recordedColors = color.getRecords();
+      recordedColors.forEach((recordedColor) => {
+        const colorElement = document.createElement("div");
+        colorElement.classList.add("recorded-color");
+        colorElement.style.backgroundColor = recordedColor;
+        colorElement.textContent = recordedColor;
+        recordedColorsContainer.appendChild(colorElement);
+      });
+    }
+  </script>
+</html>
