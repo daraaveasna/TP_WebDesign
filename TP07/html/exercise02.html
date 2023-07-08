@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Exercise 02</title>
+  </head>
+  <body>
+    <div class="flex items-center justify-center w-full h-screen bg-sky-500">
+      <div
+        class="flex flex-row chatbox bg-neutral-100 w-[950px] h-[650px] rounded-2xl"
+      >
+        <div
+          class="h-full w-[20%] nav bg-white rounded-tl-2xl rounded-bl-2xl border border-gray-200"
+        >
+          <div class="flex flex-row items-center w-full h-16 pl-6 border-b-2">
+            <div class="mr-1 log">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                style="fill: rgba(2, 132, 199, 1)"
+              >
+                <path
+                  d="M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm-5 10.5A1.5 1.5 0 0 1 9.5 14c-.086 0-.168-.011-.25-.025-.083.01-.164.025-.25.025a2 2 0 1 1 2-2c0 .085-.015.167-.025.25.013.082.025.164.025.25zm4 1.5c-.086 0-.167-.015-.25-.025a1.471 1.471 0 0 1-.25.025 1.5 1.5 0 0 1-1.5-1.5c0-.085.012-.168.025-.25-.01-.083-.025-.164-.025-.25a2 2 0 1 1 2 2z"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-xl font-bold text-gray-900 log-text">Chatbox</div>
+          </div>
+          <div class="flex flex-col icon-component">
+            <div class="flex flex-row items-center dashboard">
+              <div class="mx-4 my-4 icon-logo">
+                <img class="w-5 ml-2" src="../img/icons/grid.svg" alt="" />
+              </div>
+              <div class="text">Dashboard</div>
+            </div>
+            <div class="flex flex-row items-center analitycs">
+              <div class="mx-4 my-4 icon-logo">
+                <img class="w-5 ml-2" src="../img/icons/command.svg" alt="" />
+              </div>
+              <div class="text">Analitycs</div>
+            </div>
+            <div class="flex flex-row items-center files">
+              <div class="mx-4 my-4 icon-logo">
+                <img class="w-5 ml-2" v src="../img/icons/folder.svg" alt="" />
+              </div>
+              <div class="text">Files</div>
+            </div>
+            <div class="flex flex-row items-center call">
+              <div class="mx-4 my-4 icon-logo">
+                <img class="w-5 ml-2" src="../img/icons/phone.svg" alt="" />
+              </div>
+              <div class="text">Call</div>
+            </div>
+            <div
+              class="flex flex-row items-center h-10 mx-2 my-2 rounded-xl p message bg-sky-600"
+            >
+              <div class="ml-2 mr-4 icon-logo">
+                <img
+                  class="w-5 ml-2"
+                  src="../img/icons/message-circle.svg"
+                  alt=""
+                />
+              </div>
+              <div class="text-white text">Message</div>
+            </div>
+            <div class="flex flex-row items-center community">
+              <div class="mx-4 my-4 icon-logo">
+                <img class="w-5 ml-2" src="../img/icons/users.svg" alt="" />
+              </div>
+              <div class="text">Community</div>
+            </div>
+            <div class="flex flex-row items-center settings">
+              <div class="mx-3 my-3 icon-logo">
+                <img class="w-5 ml-2" src="../img/icons/settings.svg" alt="" />
+              </div>
+              <div class="text">Settings</div>
+            </div>
+            <div class="flex flex-row ml-4 mt-[170px]">
+              <div class="w-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="flex flex-col ml-2 user-name">
+                <div class="text-sm font-bold text-[#424242] name">Daraa</div>
+                <div class="text-xs log-out text-slate-600">Logout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-full w-[35%] list-chat bg-slate-800">
+          <div
+            class="flex items-center w-full h-[65px] bg-white nav-bar border-b-2 border-r-2"
+          >
+            <div class="ml-4 text-xl font-bold logo text-sky-600">Messages</div>
+            <div class="flex flex-row ml-32 btn">
+              <div
+                class="flex items-center justify-center mr-2 rounded-full w-9 h-9 create bg-slate-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  style="fill: #c7c7c7"
+                >
+                  <path
+                    d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z"
+                  ></path>
+                </svg>
+              </div>
+              <div
+                class="flex items-center justify-center rounded-full search w-9 h-9 bg-slate-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  style="fill: #c7c7c7"
+                >
+                  <path
+                    d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full h-[585px] list-message bg-white border-b-2">
+            <div class="flex flex-row items-center pt-4 pb-2 pl-4">
+              <div class="logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#a9a9a9"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="ml-1 text-xs text-gray-300 mss">Pinned Message</div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">Daraaaaaa</div>
+                <div class="pl-2 text-xs text-gray-600">Typing...</div>
+              </div>
+              <div class="pl-32 text-xs time">
+                <div class="text-gray-400 t">05:11 PM</div>
+                <div
+                  class="flex justify-center mt-1 ml-6 mr-2 text-white rounded-full bg-rose-600"
+                >
+                  2
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">NeymarJr</div>
+                <div class="pl-2 text-xs text-gray-600">Monon: Lahh</div>
+              </div>
+              <div class="pl-32 text-xs time">
+                <div class="text-gray-400 t">12:11 PM</div>
+                <div class="flex justify-end">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z"
+                        fill="rgba(35,229,58,1)"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">Leo. Messii</div>
+                <div class="pl-2 text-xs text-gray-600">Bonjour</div>
+              </div>
+              <div class="pl-32 text-xs time">
+                <div class="text-gray-400 t">11:11 PM</div>
+                <div
+                  class="flex justify-center mt-1 ml-6 mr-2 text-white rounded-full bg-rose-600"
+                >
+                  4
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row items-center pt-4 pb-2 pl-4">
+              <div class="logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  style="fill: #a9a9a9"
+                >
+                  <path
+                    d="M20 2H4c-1.103 0-2 .894-2 1.992v12.017C2 17.106 2.897 18 4 18h3v4l6.351-4H20c1.103 0 2-.894 2-1.992V3.992A1.998 1.998 0 0 0 20 2zm-9 8a2 2 0 1 1-2-2c.086 0 .167.015.25.025.082-.014.164-.025.25-.025A1.5 1.5 0 0 1 11 9.5c0 .086-.012.168-.025.25.01.083.025.165.025.25zm4 2a2 2 0 0 1-2-2c0-.086.015-.167.025-.25A1.592 1.592 0 0 1 13 9.5 1.5 1.5 0 0 1 14.5 8c.086 0 .168.011.25.025.083-.01.164-.025.25-.025a2 2 0 0 1 0 4z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="ml-1 text-xs text-gray-300 mss">All Message</div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">C. Ronaldo</div>
+                <div class="pl-2 text-xs text-gray-600">Typing...</div>
+              </div>
+              <div class="pl-32 text-xs time">
+                <div class="text-gray-400 t">11:11 PM</div>
+                <div
+                  class="flex justify-center mt-1 ml-6 mr-2 text-white rounded-full bg-rose-600"
+                >
+                  2
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">Chistianoo</div>
+                <div class="pl-2 text-xs text-gray-600">Typing...</div>
+              </div>
+              <div class="pl-32 text-xs time">
+                <div class="text-gray-400 t">01:01 PM</div>
+                <div
+                  class="flex justify-center mt-1 ml-6 mr-2 text-white rounded-full bg-rose-600"
+                >
+                  1
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">C. Ronaldo</div>
+                <div class="flex flex-row items-center voice">
+                  <img class="w-4 pl-1" src="../img/icons/mic.svg" alt="" />
+                  <div class="pl-1 text-xs text-gray-600">Voice message</div>
+                </div>
+              </div>
+              <div class="text-xs pl-[108px] time">
+                <div class="text-gray-400 t">Yesterday</div>
+              </div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">C. Ronaldo</div>
+                <div class="pl-2 text-xs text-gray-600">Typing...</div>
+              </div>
+              <div class="pl-32 text-xs time">
+                <div class="text-gray-400 t">Yesterday</div>
+                <div class="flex justify-end">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z"
+                        fill="rgba(35,229,58,1)"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row pt-2 pb-4 pl-4 user-chat">
+              <div class="w-9 h-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="text">
+                <div class="pl-2 text-sm font-semibold name">C. Ronaldo</div>
+                <div class="pl-2 text-xs text-gray-600">Update figma.</div>
+              </div>
+              <div class="pl-[122px] text-xs time">
+                <div class="text-gray-400 t">Yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-full w-[45%] view-chat bg-[#f7f8fc] rounded-e-2xl">
+          <div
+            class="flex items-center w-full h-[65px] bg-white nav-bar rounded-tr-2xl border-b-2"
+          >
+            <div class="flex flex-row items-center pf-name">
+              <div class="ml-6 mr-3 h-9 w-9 pf">
+                <img src="../img/Avatar.png" alt="#" />
+              </div>
+              <div class="flex justify-between name">
+                <div>
+                  <div class="font-semibold uname">C. Ronaldo</div>
+                  <div class="text-xs text-green-600 txt">
+                    Roberto Happy Typing ...
+                  </div>
+                </div>
+                <div class="">
+                  <div class="relative flex ml-10">
+                    <img
+                      class="ml-6 h-7 w-7 pf absolute left-[-20%] top-0"
+                      src="../img/me.png"
+                      alt=""
+                    />
+                    <img
+                      class="absolute top-0 ml-6 w-7 h-7 pf left-2"
+                      src="../img/Profile.png"
+                      alt=""
+                    />
+                    <div
+                      class="absolute flex items-center justify-center text-xs font-medium text-center text-gray-400 bg-gray-200 rounded-full h-7 w-7 pf left-12 top-[2px]"
+                    >
+                      14
+                    </div>
+                    <img class="h-7 w-7 pf" src="../img/me.png" alt="" />
+
+                    <div class="absolute left-24 top-2">
+                      <svg
+                        class="h-[18px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17 9.2L22.2133 5.55071C22.4395 5.39235 22.7513 5.44737 22.9096 5.6736C22.9684 5.75764 23 5.85774 23 5.96033V18.0397C23 18.3158 22.7761 18.5397 22.5 18.5397C22.3974 18.5397 22.2973 18.5081 22.2133 18.4493L17 14.8V19C17 19.5523 16.5523 20 16 20H2C1.44772 20 1 19.5523 1 19V5C1 4.44772 1.44772 4 2 4H16C16.5523 4 17 4.44772 17 5V9.2ZM17 12.3587L21 15.1587V8.84131L17 11.6413V12.3587ZM3 6V18H15V6H3ZM5 8H7V10H5V8Z"
+                          fill="rgba(173,184,194,1)"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="absolute left-[121px] top-2">
+                      <svg
+                        class="h-[18px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"
+                          fill="rgba(173,184,194,1)"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="absolute left-36 top-2">
+                      <svg
+                        class="h-[18px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M2 8.99374C2 5.68349 4.67654 3 8.00066 3H15.9993C19.3134 3 22 5.69478 22 8.99374V21H8.00066C4.68659 21 2 18.3052 2 15.0063V8.99374ZM20 19V8.99374C20 6.79539 18.2049 5 15.9993 5H8.00066C5.78458 5 4 6.78458 4 8.99374V15.0063C4 17.2046 5.79512 19 8.00066 19H20ZM14 11H16V13H14V11ZM8 11H10V13H8V11Z"
+                          fill="rgba(173,184,194,1)"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-center mx-40 mt-2 mb-3 text-xs font-medium bg-white today rounded-3xl"
+          >
+            Today, 7 July
+          </div>
+          <div class="flex">
+            <div>
+              <img class="ml-6 h-9 w-9 pf" src="../img/Avatar.png" alt="" />
+            </div>
+            <div class="flex flex-col">
+              <div class="flex flex-row">
+                <div class="pl-2 text-sm font-semibold name">Mas Happy</div>
+                <div class="pl-2 mb-2 ml-2 text-sm text-gray-400">
+                  05:00 pm
+                </div>
+              </div>
+              <div
+                class="p-2 ml-2 text-xs bg-white rounded-tr-2xl rounded-b-2xl w-72"
+              >
+                Guyss tahuun depon liburan ke Jepun! 🎌🎌🎌
+              </div>
+              <div
+                class="p-2 mt-2 mb-2 ml-2 text-xs bg-white w-72 rounded-tr-2xl rounded-b-2xl"
+              >
+                Minta tolong nanti dibuat pembagian tugas kaya biasa
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end mt-1 mr-5">
+            <div class="flex flex-col">
+              <div class="flex flex-row">
+                <div class="pl-2 mt-0 mr-4 text-sm text-gray-400">
+                  05:02 pm
+                </div>
+                <div class="pl-2 mr-4 text-sm font-semibold name">You</div>
+                <div>
+                  <img class="h-9 w-9 pf" src="../img/Profile.png" alt="" />
+                </div>
+              </div>
+              <div
+                class="w-16 p-2 ml-12 text-xs text-center text-white bg-sky-600 rounded-tl-2xl rounded-b-2xl"
+              >
+                Gokilll!
+              </div>
+            </div>
+          </div>
+          <div class="flex mt-1 ml-6 mr-5">
+            <div class="flex flex-col">
+              <div class="flex flex-row">
+                <div>
+                  <img class="h-9 w-9 pf" src="../img/Avatar.png" alt="" />
+                </div>
+                <div class="pl-2 mr-4 text-sm font-semibold name">
+                  Mas rohmad
+                </div>
+                <div class="pl-2 mt-0 mr-4 text-sm text-gray-400">
+                  05:05 pm
+                </div>
+              </div>
+              <div
+                class="w-20 p-2 ml-10 text-xs text-gray-600 bg-white rounded-tr-2xl rounded-b-2xl"
+              >
+                Tenan ki???
+              </div>
+            </div>
+          </div>
+          <div class="flex mt-1 ml-6 mr-5">
+            <div class="flex flex-col">
+              <div class="flex flex-row">
+                <div>
+                  <img class="h-9 w-9 pf" src="../img/Avatar.png" alt="" />
+                </div>
+                <div class="pl-2 mr-4 text-sm font-semibold name">
+                  Mas Happy
+                </div>
+                <div class="pl-2 mt-0 mr-4 text-sm text-gray-400">
+                  05:11 pm
+                </div>
+              </div>
+              <div
+                class="p-2 ml-10 text-sm text-blue-600 bg-white rounded-tr-2xl rounded-b-2xl w-60"
+              >
+                @Mas Listian @Fazaa @Mba Nayu
+              </div>
+              <div class="p-2 mt-1 ml-10 bg-white rounded-tr-2xl rounded-b-2xl">
+                <div class="text-xs">Mintol Cek Figma ini dong</div>
+                <div class="text-xs text-blue-600 underline">
+                  https://www.figma.com/file/adcopy
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end mt-1 mr-5">
+            <div class="flex flex-col">
+              <div class="flex flex-row ml-52">
+                <div class="pl-2 mt-0 mr-4 text-sm text-gray-400">
+                  05:02 pm
+                </div>
+                <div class="pl-2 mr-4 text-sm font-semibold name">You</div>
+                <div>
+                  <img class="h-9 w-9 pf" src="../img/me.png" alt="" />
+                </div>
+              </div>
+              <div
+                class="p-2 pb-2 mt-2 ml-20 text-sm text-white bg-sky-600 rounded-tl-2xl rounded-b-2xl w-60"
+              >
+                Wokee siap mas! utiwi cek 🔥🔥🔥
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center w-full mt-2 bg-white border-l-2 border-[#f7f8fc] h-14 rounded-br-2xl"
+          >
+            <div
+              class="bg-[#f7f8fc] w-[95%] h-[70%] rounded-2xl flex items-center"
+            >
+              <div class="flex ml-5">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mt-[3px]">
+                    <path d="M8.25 4.5a3.75 3.75 0 117.5 0v8.25a3.75 3.75 0 11-7.5 0V4.5z" fill="#a9aaad"/>
+                    <path d="M6 10.5a.75.75 0 01.75.75v1.5a5.25 5.25 0 1010.5 0v-1.5a.75.75 0 011.5 0v1.5a6.751 6.751 0 01-6 6.709v2.291h3a.75.75 0 010 1.5h-7.5a.75.75 0 010-1.5h3v-2.291a6.751 6.751 0 01-6-6.709v-1.5A.75.75 0 016 10.5z" fill="#a9aaad" />
+                  </svg>
+                  
+                </div>
+                <div class="pl-3 text-sm text-gray-400">Type a message</div>
+              </div>
+              <div class="flex flex-row ml-36">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M5 11.1005L7 9.1005L12.5 14.6005L16 11.1005L19 14.1005V5H5V11.1005ZM5 13.9289V19H8.1005L11.0858 16.0147L7 11.9289L5 13.9289ZM10.9289 19H19V16.9289L16 13.9289L10.9289 19ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5C17 9.32843 16.3284 10 15.5 10Z"
+                      fill="rgba(173,184,194,1)"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="ml-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M10.5199 19.8634C10.5955 18.6615 10.8833 17.5172 11.3463 16.4676C9.81124 16.3252 8.41864 15.6867 7.33309 14.7151L8.66691 13.2248C9.55217 14.0172 10.7188 14.4978 12 14.4978C12.1763 14.4978 12.3501 14.4887 12.5211 14.471C14.227 12.2169 16.8661 10.7083 19.8634 10.5199C19.1692 6.80877 15.9126 4 12 4C7.58172 4 4 7.58172 4 12C4 15.9126 6.80877 19.1692 10.5199 19.8634ZM19.0233 12.636C15.7891 13.2396 13.2396 15.7891 12.636 19.0233L19.0233 12.636ZM22 12C22 12.1677 21.9959 12.3344 21.9877 12.5L12.5 21.9877C12.3344 21.9959 12.1677 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM10 10C10 10.8284 9.32843 11.5 8.5 11.5C7.67157 11.5 7 10.8284 7 10C7 9.17157 7.67157 8.5 8.5 8.5C9.32843 8.5 10 9.17157 10 10ZM17 10C17 10.8284 16.3284 11.5 15.5 11.5C14.6716 11.5 14 10.8284 14 10C14 9.17157 14.6716 8.5 15.5 8.5C16.3284 8.5 17 9.17157 17 10Z"
+                      fill="rgba(173,184,194,1)"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="ml-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M12.001 22C6.47813 22 2.00098 17.5228 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22ZM8.89113 13.1708L8.90378 13.1628C9.48351 15.0767 9.77337 16.0337 9.77337 16.0337C9.88564 16.3442 10.04 16.3996 10.2273 16.3743C10.4145 16.3489 10.5139 16.2476 10.6361 16.1297C10.6361 16.1297 11.0324 15.7472 11.825 14.9823L14.3759 16.8698C14.8407 17.1266 15.1763 16.9941 15.2917 16.4377L16.9495 8.61641C17.1325 7.88842 16.8115 7.59644 16.247 7.82754L6.51397 11.5871C5.84996 11.854 5.85317 12.2255 6.39308 12.3911L8.89113 13.1708Z"
+                      fill="rgba(173,184,194,1)"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="ml-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z"
+                      fill="rgba(173,184,194,1)"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
